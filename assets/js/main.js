@@ -1,8 +1,11 @@
 /*==================== SCROLL HEADER ====================*/
 const header = document.getElementById('header')
+const scrollUp = document.getElementById('scroll-up')
 document.addEventListener('scroll', (e) => {
   if (this.scrollY >= 100) header.classList.add('header-scrolled')
   else header.classList.remove('header-scrolled')
+  if (this.scrollY >= 200) scrollUp.classList.add('show')
+  else scrollUp.classList.remove('show')
 })
 
 /*==================== TOGGLE MOBILE NAV ====================*/

@@ -162,6 +162,7 @@ input {
   z-index: var(--z-fixed);
   background-color: transparent;
 }
+
 .IO-dummy-point {
   position: absolute;
   top: 0;
@@ -173,6 +174,7 @@ input {
 
 .header-scrolled {
   background-color: var(--body-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .header-scrolled .nav__logo,
 .header-scrolled .nav__toggle {
@@ -213,7 +215,7 @@ input {
     right: -70%;
     width: 70%;
     height: 100%;
-    box-shadow: -1px 0 4px hsl(var(--hue-color), 64%, 15%, 0.15);
+    box-shadow: -1px 0 4px hsla(var(--hue-color), 64%, 15%, 0.15);
     padding: 3rem;
     transition: 0.4s;
   }
@@ -661,4 +663,26 @@ input {
 }
 .footer__terms > a:hover {
   color: var(--text-color);
+}
+
+/*=============== SCROLL UP ===============*/
+.scroll-up {
+  background-color: var(--first-color);
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  padding: 0.85rem 1rem;
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+  z-index: var(--z-tooltip);
+  transition: 0.4s;
+  opacity: 0.9;
+}
+.scroll-up:hover {
+  opacity: 1;
+  background-color: var(--first-color-alt);
+}
+.scroll-up.show {
+  bottom: 5rem;
 }
