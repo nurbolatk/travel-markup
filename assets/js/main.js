@@ -1,3 +1,11 @@
+/*==================== SCROLL HEADER ====================*/
+const header = document.getElementById('header')
+document.addEventListener('scroll', (e) => {
+  if (this.scrollY >= 100) header.classList.add('header-scrolled')
+  else header.classList.remove('header-scrolled')
+})
+
+/*==================== TOGGLE MOBILE NAV ====================*/
 const navMenu = document.getElementById('nav-menu')
 const navMenuToggle = document.getElementById('nav-toggle')
 const navMenuClose = document.getElementById('nav-close')
@@ -32,14 +40,17 @@ let swiper = new Swiper('.discover__container', {
 const videoButton = document.getElementById('video-button')
 const video = document.getElementById('video-file')
 const videoButtonIcon = videoButton.getElementsByTagName('i')[0]
+function togglePlayPause() {
+  videoButtonIcon.classList.toggle('ri-pause-line')
+  videoButtonIcon.classList.toggle('ri-play-line')
+}
 videoButton.addEventListener('click', () => {
   if (video.paused) {
     video.play()
-    videoButtonIcon.classList.toggle('ri-pause-line')
-    videoButtonIcon.classList.toggle('ri-play-line')
+    togglePlayPause()
   } else {
     video.pause()
-    videoButtonIcon.classList.toggle('ri-pause-line')
-    videoButtonIcon.classList.toggle('ri-play-line')
+    togglePlayPause()
   }
 })
+video.addEventListener('ended', togglePlayPause)

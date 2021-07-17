@@ -160,7 +160,23 @@ input {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: var(--first-color);
+  background-color: transparent;
+}
+.IO-dummy-point {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5rem;
+  background-color: red;
+}
+
+.header-scrolled {
+  background-color: var(--body-color);
+}
+.header-scrolled .nav__logo,
+.header-scrolled .nav__toggle {
+  color: var(--title-color);
 }
 
 /*=============== NAV ===============*/
@@ -619,19 +635,30 @@ input {
 }
 
 .footer__link {
-  color: var(--first-color-alt);
+  color: var(--text-color);
+}
+
+.footer__link:hover {
+  color: var(--title-color);
 }
 
 .footer__rights {
   text-align: center;
   width: max-content;
   margin: 0 auto;
+  color: var(--text-color-light);
 }
+
 .footer__terms {
   margin-top: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  column-gap: 1.5rem;
 }
+
 .footer__terms > a {
-  color: var(--first-color-alt);
+  color: var(--text-color-light);
+}
+.footer__terms > a:hover {
+  color: var(--text-color);
 }
