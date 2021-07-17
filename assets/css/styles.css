@@ -90,6 +90,7 @@ body {
   font-size: var(--normal-font-size);
   border-color: var(--body-color);
   color: var(--text-color);
+  background-color: var(--body-color);
 }
 
 h1,
@@ -163,15 +164,6 @@ input {
   background-color: transparent;
 }
 
-.IO-dummy-point {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5rem;
-  background-color: red;
-}
-
 .header-scrolled {
   background-color: var(--body-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -179,6 +171,14 @@ input {
 .header-scrolled .nav__logo,
 .header-scrolled .nav__toggle {
   color: var(--title-color);
+}
+
+.change-theme {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  background-color: var(--body-color);
+  color: var(--text-color);
 }
 
 /*=============== NAV ===============*/
@@ -205,6 +205,9 @@ input {
 
 .nav__menu {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 767px) {
@@ -685,4 +688,40 @@ input {
 }
 .scroll-up.show {
   bottom: 5rem;
+}
+
+/* ============== DARK THEME ================ */
+@media (prefers-color-scheme: dark) {
+  body {
+    --first-color-second: hsl(var(--hue-color), 54%, 12%);
+    --title-color: hsl(var(--hue-color), 24%, 95%);
+    --text-color: hsl(var(--hue-color), 8%, 75%);
+    --input-color: hsl(var(--hue-color), 29%, 16%);
+    --body-color: hsl(var(--hue-color), 29%, 12%);
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+  }
+  body.light-theme {
+    --first-color: hsl(var(--hue-color), 64%, 22%);
+    --first-color-second: hsl(var(--hue-color), 64%, 22%);
+    --first-color-alt: hsl(var(--hue-color), 64%, 15%);
+    --title-color: hsl(var(--hue-color), 64%, 18%);
+    --text-color: hsl(var(--hue-color), 24%, 35%);
+    --text-color-light: hsl(var(--hue-color), 8%, 60%);
+    --input-color: hsl(var(--hue-color), 24%, 97%);
+    --body-color: hsl(var(--hue-color), 100%, 99%);
+    --white-color: #fff;
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
+  }
+}
+
+body.dark-theme {
+  --first-color-second: hsl(var(--hue-color), 54%, 12%);
+  --title-color: hsl(var(--hue-color), 24%, 95%);
+  --text-color: hsl(var(--hue-color), 8%, 75%);
+  --input-color: hsl(var(--hue-color), 29%, 16%);
+  --body-color: hsl(var(--hue-color), 29%, 12%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
 }
