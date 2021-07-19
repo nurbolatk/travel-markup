@@ -79,3 +79,23 @@ themeToggler.addEventListener('click', function () {
   }
   localStorage.setItem('theme', theme)
 })
+
+/*==================== SCROLL REVEAL ANIMATION ====================*/
+const sr = ScrollReveal({
+  distance: '60px',
+  duration: 2800,
+})
+
+const x = sr.reveal(`.home__data, .home__social-link, .home__info`, {
+  origin: 'top',
+  interval: 100,
+})
+
+sr.reveal(`.video__description`, {
+  origin: 'left',
+})
+
+sr.reveal(`.video__content`, {
+  origin: 'right',
+  interval: 100,
+})

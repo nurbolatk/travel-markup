@@ -607,17 +607,24 @@ input {
 
 .sponsor__img {
   width: 90px;
-  opacity: 0.4;
+  /* opacity: 0.4; */
+  filter: invert(0.7);
   transition: var(--img-transition);
 }
 
 .sponsor__img:hover {
-  opacity: 0.6;
+  filter: invert(0.6);
 }
 
 /*=============== FOOTER ===============*/
 .footer__title {
   margin-bottom: var(--mb-1);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 3.5rem;
 }
 
 .footer__socials {
@@ -652,6 +659,7 @@ input {
   width: max-content;
   margin: 0 auto;
   color: var(--text-color-light);
+  font-size: var(--small-font-size);
 }
 
 .footer__terms {
@@ -786,8 +794,8 @@ body.dark-theme {
     position: initial;
   }
   .nav__menu {
-    display: flex;
-    column-gap: 1rem;
+    column-gap: 2rem;
+    flex-direction: row;
   }
   .nav__list {
     flex-direction: row;
@@ -797,25 +805,26 @@ body.dark-theme {
   .nav__close {
     display: none;
   }
-  .change-theme-name {
+  .change-theme__label {
     display: none;
   }
   .change-theme {
+    background-color: transparent;
     color: var(--white-color);
   }
   .active-link::before {
     background-color: var(--white-color);
   }
-  .scroll-header .nav__link {
+  .header-scrolled .nav__link {
     color: var(--text-color);
   }
-  .scroll-header .active-link {
+  .header-scrolled .active-link {
     color: var(--title-color);
   }
-  .scroll-header .active-link::before {
+  .header-scrolled .active-link::before {
     background-color: var(--title-color);
   }
-  .scroll-header .change-theme {
+  .header-scrolled .change-theme {
     color: var(--text-color);
   }
   .section {
@@ -867,20 +876,22 @@ body.dark-theme {
   .experience__overlay:nth-child(2) {
     width: 160px;
   }
-  .subscribe__bg {
-    background: none;
-    padding: 0;
+
+  .newsletter {
+    padding: 3.5rem;
+    max-width: 80%;
+    margin: 6rem auto;
   }
-  .subscribe__container {
-    background-color: var(--first-color-second);
-    padding: 3.5rem 0;
-  }
-  .subscribe__input {
-    padding: 0 0.5rem;
-  }
+
   .footer__rights {
+    display: flex;
+    width: auto;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .footer__terms {
+    margin: 0;
   }
 }
 
@@ -959,7 +970,7 @@ body.dark-theme {
   }
 }
 
-/* For tall screens on mobiles y desktop*/
+/* For tall screens on mobiles n desktops*/
 @media screen and (min-height: 721px) {
   body {
     margin: 0;
